@@ -30,7 +30,11 @@ const { methods } = Astro.props as Props
           >
             {!method.linkOnly && method.command && (
               <>
-                <code class="install-method__command">{method.command}</code>
+                <div class="install-method__command-shell">
+                  <code class="install-method__command">
+                    <span>{method.command}</span>
+                  </code>
+                </div>
                 <button
                   type="button"
                   class="copy-button"
@@ -186,9 +190,14 @@ const { methods } = Astro.props as Props
     display: flex;
   }
 
-  .install-method__command {
-    flex: 1 1 auto;
+  .install-method__command-shell {
+    flex: 1 1 0;
     min-width: 0;
+  }
+
+  .install-method__command {
+    display: block;
+    width: 100%;
     overflow-x: auto;
     white-space: nowrap;
     font-family: var(--font-code);
@@ -196,6 +205,11 @@ const { methods } = Astro.props as Props
     line-height: 1.6;
     color: rgba(235, 244, 255, 0.94);
     scrollbar-width: thin;
+  }
+
+  .install-method__command span {
+    display: inline-block;
+    min-width: max-content;
   }
 
   .install-method :global(.copy-button) {
