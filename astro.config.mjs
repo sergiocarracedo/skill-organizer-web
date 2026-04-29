@@ -3,8 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://sergiocarracedo.github.io",
-  base: "/skill-organizer",
+  site: "https://skill-organizer.sergiocarracedo.es",
   integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()],
