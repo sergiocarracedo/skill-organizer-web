@@ -1,3 +1,5 @@
+import { cliVersion } from '@/lib/cli-version';
+
 export type CommandGroup = {
   slug: string;
   title: string;
@@ -7,8 +9,6 @@ export type CommandGroup = {
   flags?: Array<{ flag: string; description: string }>;
   examples: string[];
 };
-
-export const cliVersion = "0.0.3";
 
 export const installSnippets = {
   npm: ["npm i -g skill-organizer", "skill-organizer --version"],

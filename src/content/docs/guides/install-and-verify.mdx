@@ -1,6 +1,6 @@
 ---
 title: Install and Verify
-description: Install the CLI with npm or Homebrew and confirm the binary is available.
+description: Install the CLI with npm, pnpm, or Homebrew and confirm the binary is available.
 section: guides
 order: 1
 summary: Installation basics and a first verification step.
@@ -19,6 +19,20 @@ skill-organizer --version
 ```
 
 The npm package downloads the matching prebuilt release artifact for your current operating system and architecture.
+
+## Install with pnpm
+
+```bash
+pnpm add -g skill-organizer
+```
+
+Then verify that the binary is on your path:
+
+```bash
+skill-organizer --version
+```
+
+pnpm is a good fit when you already use it for your global CLI tooling.
 
 ## Install with Homebrew
 

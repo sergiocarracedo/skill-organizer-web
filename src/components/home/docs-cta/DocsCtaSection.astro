@@ -1,19 +1,21 @@
 ---
 import { docsEntryCards } from '@/data/home'
+
+const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`
 ---
 
 <section class='docs-cta'>
   <div class='docs-cta__panel' data-reveal>
-    <p class='docs-cta__eyebrow'>Documentation entry point</p>
-    <h2 class='docs-cta__title'>Choose a path into the docs instead of hunting for the right page.</h2>
+    <p class='docs-cta__eyebrow'>Documentation</p>
+    <h2 class='docs-cta__title'>Pick the path you need.</h2>
     <p class='docs-cta__copy'>
-      Start with install when you are new, onboarding when you are configuring a target, or reference when you
-      want exact commands for sync, service, overlap analysis, and completion scripts.
+      Start with install if you are new, onboarding if you are wiring up a skills location, or reference if you want the
+      exact command surface for sync, service, overlap analysis, and completion scripts.
     </p>
 
     <div class='docs-cta__grid'>
       {docsEntryCards.map((card) => (
-        <a class='docs-cta__card' href={card.href}>
+        <a class='docs-cta__card' href={withBase(card.href)}>
           <span class='docs-cta__card-title'>{card.title}</span>
           <span class='docs-cta__card-copy'>{card.copy}</span>
         </a>

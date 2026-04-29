@@ -1,21 +1,21 @@
 ---
-import { installOnboardBlocks, installOnboardNotes } from '@/data/home'
+import { installOnboardNotes, terminalScenarios } from '@/data/home'
 
 import TerminalScene from './TerminalScene.astro'
 ---
 
 <section class='home-section' id='install-flow'>
   <div class='home-section__header' data-reveal>
-    <p class='home-section__eyebrow'>Install and onboard</p>
-    <h2 class='home-section__title'>Install the CLI, onboard the target, and start from a clean managed state.</h2>
+    <p class='home-section__eyebrow'>First run</p>
+    <h2 class='home-section__title'>Install, onboard, and start organizing.</h2>
     <p class='home-section__copy'>
-      This terminal view mirrors the first-run experience: install once, run the guided onboarding flow,
-      and confirm the project state before you start organizing or disabling skills.
+      The demo mirrors the real CLI flow: install the binary, run onboarding, and confirm the project is managed
+      before you start reorganizing skills.
     </p>
   </div>
 
   <div class='terminal-demo__layout'>
-    <TerminalScene blocks={installOnboardBlocks} />
+    <TerminalScene scenarios={terminalScenarios} />
 
     <div class='terminal-demo__notes'>
       {installOnboardNotes.map((note) => (

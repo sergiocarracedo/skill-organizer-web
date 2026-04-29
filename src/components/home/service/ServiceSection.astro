@@ -6,10 +6,10 @@ import { servicePanels } from '@/data/home'
 <section class='service-section'>
   <div class='service-section__intro' data-reveal>
     <p class='service-section__eyebrow'>Service and watch mode</p>
-    <h2 class='service-section__title'>Make sync a background capability, not a manual chore.</h2>
+    <h2 class='service-section__title'>Stop treating sync like manual maintenance.</h2>
     <p class='service-section__copy'>
-      The foreground watcher is great while you are shaping a project. The service becomes the real upgrade when
-      the source tree is part of daily work and the flat target should just stay fresh by itself.
+      Use watch mode while actively editing, or install the service when you want the flat target to stay current
+      in the background.
     </p>
     <div class='service-section__chips'>
       <span>Foreground watch</span>
@@ -91,6 +91,7 @@ import { servicePanels } from '@/data/home'
   .service-section__panels {
     display: flex;
     flex: 1 1 36rem;
+    min-width: 0;
     flex-direction: column;
     gap: 1rem;
   }

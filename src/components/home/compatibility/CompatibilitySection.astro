@@ -6,18 +6,18 @@ import { compatibilityItems } from '@/data/home'
 <section class='compatibility-section'>
   <div class='compatibility-section__copy' data-reveal>
     <p class='compatibility-section__eyebrow'>Compatibility</p>
-    <h2 class='compatibility-section__title'>Use the best agent for the job.</h2>
+    <h2 class='compatibility-section__title'>Works with the tools you already use.</h2>
     <p class='compatibility-section__body'>
-      Keep one organized source tree and expose the flat target that each agent expects. Use generic `.agents`
-      layouts where possible, or onboard directly into tool-specific targets without giving up structure.
+      Keep one organized source tree and generate the flat target expected by Claude Code, OpenCode, Codex,
+      Cursor, and Antigravity.
     </p>
   </div>
 
   <div class='compatibility-section__supports' data-reveal>
-    <span class='compatibility-section__supports-label'>Supports</span>
+    <span class='compatibility-section__supports-label'>Works with</span>
     <div class='compatibility-section__supports-strip'>
       {compatibilityItems.map((item) => (
-        <AgentToolLogo id={item.id} name={item.name} />
+        <AgentToolLogo id={item.id} name={item.name} compact iconOnly />
       ))}
     </div>
   </div>
@@ -62,20 +62,25 @@ import { compatibilityItems } from '@/data/home'
 
   .compatibility-section__supports {
     display: flex;
-    align-items: center;
-    gap: 0.55rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
     padding-top: 0.5rem;
   }
 
   .compatibility-section__supports-label {
+    font-family: var(--font-display);
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(177, 225, 255, 0.68);
   }
 
   .compatibility-section__supports-strip {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.15rem;
+    gap: 0.4rem;
   }
 
   @media (min-width: 960px) {

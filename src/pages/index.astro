@@ -6,20 +6,22 @@ import DocsCtaSection from '@/components/home/docs-cta/DocsCtaSection.astro'
 import FaqSection from '@/components/home/faq/FaqSection.astro'
 import FeaturesSection from '@/components/home/features/FeaturesSection.astro'
 import HeroSection from '@/components/home/hero/HeroSection.astro'
+import OverlapSection from '@/components/home/overlap/OverlapSection.astro'
 import ServiceSection from '@/components/home/service/ServiceSection.astro'
 import TerminalDemoSection from '@/components/home/terminal-demo/TerminalDemoSection.astro'
 ---
 
 <SiteLayout
   title="Skill Organizer"
-  description="A crystalline Astro landing page for the CLI that keeps nested skill source trees organized while exposing flat tool-readable targets."
+  description="CLI for organizing agent skills in nested source folders while keeping a flat tool-compatible target for Claude Code, OpenCode, Codex, Cursor, and more."
 >
   <HeroSection />
-  <TerminalDemoSection />
   <FeaturesSection />
   <CompatibilitySection />
   <AdvantagesSection />
+  <TerminalDemoSection />
   <ServiceSection />
+  <OverlapSection />
   <FaqSection />
   <DocsCtaSection />
 </SiteLayout>

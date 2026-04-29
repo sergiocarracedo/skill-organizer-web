@@ -1,11 +1,14 @@
 ---
 import HeroWaves from '@/components/HeroWaves.astro'
 import LogoMark from '@/components/LogoMark.astro'
-import { cliVersion } from '@/data/commands'
-import { heroInstallMethods } from '@/data/home'
+import { cliVersion } from '@/lib/cli-version'
+import AgentToolLogo from '@/components/AgentToolLogo.astro'
+import { heroInstallMethods, heroLogoItems } from '@/data/home'
 
 import HeroInstallSwitcher from './HeroInstallSwitcher.astro'
 import HeroTransformPanel from './HeroTransformPanel.astro'
+
+const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`
 ---
 
 <section class='home-hero'>
@@ -18,9 +21,9 @@ import HeroTransformPanel from './HeroTransformPanel.astro'
         <span>Version {cliVersion}</span>
       </div>
 
-      <p class='home-hero__eyebrow' data-reveal>Structured skills, flat targets</p>
+      <p class='home-hero__eyebrow' data-reveal>Stop managing skills in a flat folder</p>
 
-      <h1 class='home-hero__title' data-reveal>Keep your skills organized</h1>
+      <h1 class='home-hero__title' data-reveal>Organize skills. Keep tools compatible.</h1>
     </div>
 
     <div class='home-hero__visual'>
@@ -29,24 +32,24 @@ import HeroTransformPanel from './HeroTransformPanel.astro'
 
     <div class='home-hero__after'>
       <div class='home-hero__supports' data-reveal>
-        <span>Works on macOS</span>
-        <span>Works on Linux</span>
-        <span>Claude Code, OpenCode, Codex, Cursor, and more</span>
+        {heroLogoItems.map((item) => (
+          <AgentToolLogo id={item.id} name={item.name} compact />
+        ))}
       </div>
 
       <HeroInstallSwitcher methods={heroInstallMethods} />
 
-      <h2 class='home-hero__subheading' data-reveal>Expose a flat target your tools already understand.</h2>
+      <h2 class='home-hero__subheading' data-reveal>Use a real source tree. Keep the tool-facing view your agent stack expects.</h2>
 
       <p class='home-hero__copy' data-reveal>
-        `skill-organizer` gives you an editable `skills-organized/` source tree and keeps the generated
-        tool-facing target synchronized through symlinks, metadata rewrites, watch mode, and the
-        background service. It is built for agentic tools that still expect a flat first-level skills folder.
+        `skill-organizer` replaces the messy first-level skills folder with a workflow that actually scales.
+        Organize skills by source, topic, company, or project in `skills-organized/`, then keep the generated
+        tool-readable view synced automatically across one or many setups.
       </p>
 
       <div class='home-hero__actions' data-reveal>
-        <a href='/docs/guides/install-and-verify'>Install guide</a>
-        <a href='/docs/reference/onboard' class='is-secondary'>Start with onboard</a>
+        <a href={withBase('/docs/guides/install-and-verify')}>Get started</a>
+        <a href={withBase('/docs/guides/onboard-a-tool')} class='is-secondary'>See onboarding</a>
       </div>
     </div>
   </div>
@@ -102,7 +105,7 @@ import HeroTransformPanel from './HeroTransformPanel.astro'
   .home-hero__title {
     color: white;
     font-size: clamp(2.7rem, 5.5vw, 5.1rem);
-    white-space: nowrap;
+    max-width: 16ch;
   }
 
   .home-hero__after {
@@ -113,7 +116,7 @@ import HeroTransformPanel from './HeroTransformPanel.astro'
   }
 
   .home-hero__subheading {
-    max-width: 24ch;
+    max-width: 22ch;
     color: white;
     font-size: clamp(1.7rem, 4vw, 2.8rem);
   }
@@ -129,17 +132,8 @@ import HeroTransformPanel from './HeroTransformPanel.astro'
   .home-hero__supports {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.55rem;
     justify-content: center;
-  }
-
-  .home-hero__supports span {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 999px;
-    padding: 0.55rem 0.85rem;
-    font-size: 0.88rem;
-    color: rgba(228, 241, 255, 0.82);
-    background: rgba(255, 255, 255, 0.04);
   }
 
   .home-hero__actions {
@@ -175,12 +169,6 @@ import HeroTransformPanel from './HeroTransformPanel.astro'
     display: flex;
     width: 100%;
     justify-content: center;
-  }
-
-  @media (max-width: 760px) {
-    .home-hero__title {
-      white-space: normal;
-    }
   }
 
   @media (min-width: 900px) {

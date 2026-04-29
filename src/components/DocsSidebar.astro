@@ -9,6 +9,7 @@ type Props = {
 }
 
 const { entries, currentPath } = Astro.props as Props
+const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`
 ---
 
 <aside class='docs-sidebar'>
@@ -16,15 +17,15 @@ const { entries, currentPath } = Astro.props as Props
     const sectionEntries = getDocsBySection(entries, section.slug)
 
     return (
-      <section>
+      <section class='docs-sidebar__section'>
         <p class='docs-sidebar__eyebrow'>{section.title}</p>
-        <ul class='mt-3 grid gap-1'>
+        <ul class='docs-sidebar__list'>
           {sectionEntries.map((entry) => {
             const href = `/docs/${entry.data.section}/${trimCollectionSlug(entry.id)}`
 
             return (
               <li>
-                <a href={href} class:list={{ 'docs-sidebar__link': true, 'is-active': currentPath === href }}>
+                <a href={withBase(href)} class:list={{ 'docs-sidebar__link': true, 'is-active': currentPath === href }}>
                   <span>{entry.data.title}</span>
                 </a>
               </li>

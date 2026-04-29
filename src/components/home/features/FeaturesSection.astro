@@ -5,16 +5,22 @@ import { featureCards } from '@/data/home'
 <section class='features-section' id='features'>
   <div class='features-section__intro' data-reveal>
     <p class='features-section__eyebrow'>Main features</p>
-    <h2 class='features-section__title'>A workflow for real skill libraries, not a flat folder that grows out of control.</h2>
+    <h2 class='features-section__title'>Built for growing skill libraries.</h2>
     <p class='features-section__copy'>
-      Skill Organizer keeps the source tree expressive for humans and the target flat for tools, with the
-      operational commands to keep both sides healthy over time.
+      Keep the source tree clean for humans and the generated target predictable for tools, without resorting to
+      manual copying, renaming, or cleanup.
     </p>
   </div>
 
   <div class='features-section__grid'>
     {featureCards.map((card, index) => (
-      <article class='feature-card' data-reveal>
+      <article
+        class:list={['feature-card', `feature-card--${card.shape}`]}
+        data-reveal
+        data-feature-card
+        data-base-rotation={card.rotation}
+        data-rotation-speed={card.speed}
+      >
         <span class='feature-card__spark' aria-hidden='true'></span>
         <p class='features-section__index'>0{index + 1}</p>
         <h3>{card.title}</h3>
@@ -78,6 +84,52 @@ import { featureCards } from '@/data/home'
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
+    min-height: 17.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 24px 60px rgba(7, 13, 26, 0.14);
+    transform: rotate(calc(var(--feature-rotation, 0deg) * 1deg));
+    transform-origin: center;
+    transition: transform 180ms ease;
+    will-change: transform;
+  }
+
+  .feature-card--bevel {
+    clip-path: polygon(0 0.6rem, calc(100% - 1.6rem) 0, 100% 1.15rem, 100% 100%, 0 100%);
+    border-radius: 1.7rem;
+  }
+
+  .feature-card--arc {
+    border-radius: 2.5rem 1.35rem 2.1rem 1.1rem;
+  }
+
+  .feature-card--slant {
+    clip-path: polygon(0 0.95rem, 100% 0, 100% calc(100% - 0.45rem), 0 100%);
+    border-radius: 1.45rem;
+  }
+
+  .feature-card--ticket {
+    border-radius: 1.55rem;
+    clip-path: polygon(0 0, 100% 0, 100% 74%, 95% 80%, 100% 88%, 100% 100%, 0 100%, 0 0);
+  }
+
+  .feature-card--hex {
+    clip-path: polygon(10% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 14%);
+    border-radius: 1.35rem;
+  }
+
+  .feature-card--shield {
+    clip-path: polygon(0 0, 100% 0, 100% 76%, 56% 100%, 0 82%);
+    border-radius: 1.55rem 1.55rem 1.9rem 1.9rem;
+  }
+
+  .feature-card__spark {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.9rem;
+    background: linear-gradient(145deg, rgba(67, 238, 255, 0.26), rgba(157, 97, 255, 0.16), rgba(255, 181, 73, 0.22));
+    box-shadow: 0 0 28px rgba(114, 163, 255, 0.18);
   }
 
   .feature-card h3 {
@@ -108,3 +160,24 @@ import { featureCards } from '@/data/home'
     }
   }
 </style>
+
+<script>
+  const updateFeatureCardMotion = () => {
+    document.querySelectorAll('[data-feature-card]').forEach((card) => {
+      if (!(card instanceof HTMLElement)) {
+        return
+      }
+
+      const base = Number(card.dataset.baseRotation ?? '0')
+      const speed = Number(card.dataset.rotationSpeed ?? '0')
+      const rect = card.getBoundingClientRect()
+      const centerOffset = rect.top + rect.height / 2 - window.innerHeight / 2
+      const drift = centerOffset * speed * 0.035
+      card.style.setProperty('--feature-rotation', `${base + drift}`)
+    })
+  }
+
+  updateFeatureCardMotion()
+  window.addEventListener('scroll', updateFeatureCardMotion, { passive: true })
+  window.addEventListener('resize', updateFeatureCardMotion)
+</script>
