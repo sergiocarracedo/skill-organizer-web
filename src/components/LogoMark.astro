@@ -1,7 +1,5 @@
 ---
-import logo from '../../../assets/logo_color2.png'
-
 const { className = '' } = Astro.props
 ---
 
-<img src={logo.src} alt='Skill Organizer logo' class={`logo-mark ${className}`.trim()} loading='eager' />
+<img src={`${import.meta.env.BASE_URL}favicon.svg`} alt='Skill Organizer logo' class={`logo-mark ${className}`.trim()} loading='eager' />
