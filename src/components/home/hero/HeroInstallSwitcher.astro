@@ -165,7 +165,7 @@ const { methods } = Astro.props as Props
   .install-method {
     display: none;
     flex: 0 1 auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 0.85rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -186,11 +186,20 @@ const { methods } = Astro.props as Props
   }
 
   .install-method__command {
+    flex: 1 1 auto;
+    min-width: 0;
     overflow-x: auto;
+    white-space: nowrap;
     font-family: var(--font-code);
     font-size: 0.9rem;
     line-height: 1.6;
     color: rgba(235, 244, 255, 0.94);
+    scrollbar-width: thin;
+  }
+
+  .install-method :global(.copy-button) {
+    flex: none;
+    margin-left: auto;
   }
 
   .install-method__link {
@@ -232,6 +241,11 @@ const { methods } = Astro.props as Props
     .install-switcher__panel,
     .install-method {
       width: 100%;
+    }
+
+    .install-method {
+      border-radius: 1rem;
+      padding: 0.5rem 0.55rem 0.5rem 0.8rem;
     }
   }
 </style>

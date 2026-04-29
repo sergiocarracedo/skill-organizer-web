@@ -257,12 +257,14 @@ p {
 }
 
 .copy-button {
+  flex: none;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   padding: 0.55rem 0.9rem;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: rgba(255, 255, 255, 0.72);
   transition: 180ms ease;
 }
@@ -533,8 +535,10 @@ p {
 }
 
 .docs-prose {
+  min-width: 0;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2rem;
+  border-radius: clamp(1rem, 4vw, 2rem);
   background: linear-gradient(
     180deg,
     rgba(8, 14, 29, 0.92),
@@ -579,13 +583,16 @@ p {
   font-family: var(--font-code);
   font-size: 0.86em;
   color: rgba(194, 236, 255, 0.96);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .docs-prose pre {
   margin-top: 1rem;
+  max-width: 100%;
   overflow-x: auto;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.25rem;
+  border-radius: clamp(0.85rem, 3vw, 1.25rem);
   background: rgba(8, 16, 31, 0.94);
   padding: 1.1rem 1.2rem;
   font-size: 0.88rem;
@@ -599,10 +606,25 @@ p {
 }
 
 .docs-prose pre code {
+  display: block;
+  min-width: max-content;
+  white-space: pre;
   padding: 0;
   background: transparent;
   font-size: inherit;
   color: inherit;
+}
+
+@media (max-width: 640px) {
+  .docs-prose {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .docs-prose pre {
+    border-radius: 0.9rem;
+    padding: 0.9rem 1rem;
+  }
 }
 
 [data-reveal] {
