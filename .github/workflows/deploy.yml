@@ -40,6 +40,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Fetch CLI version
+        run: |
+          echo "SKILL_ORGANIZER_VERSION=$(curl -fsSL https://raw.githubusercontent.com/sergiocarracedo/skill-organizer/refs/heads/main/VERSION)" >> "$GITHUB_ENV"
+
       - name: Build site
         run: pnpm build
 
