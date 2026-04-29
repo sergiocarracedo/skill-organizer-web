@@ -1,0 +1,84 @@
+---
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import '@/styles/global.css'
+
+type Props = {
+  title: string
+  description: string
+  currentPath?: string
+}
+
+const { title, description, currentPath = Astro.url.pathname } = Astro.props as Props
+---
+
+<!doctype html>
+<html lang='en' class='scroll-smooth'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content={description} />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <div class='page-noise'></div>
+    <div class='page-glow page-glow--left'></div>
+    <div class='page-glow page-glow--right'></div>
+
+    <Header currentPath={currentPath} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible')
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.14, rootMargin: '0px 0px -8% 0px' },
+      )
+
+      document.querySelectorAll('[data-reveal]').forEach((node) => observer.observe(node))
+
+      document.querySelectorAll('[data-copy-text]').forEach((node) => {
+        const button = node instanceof HTMLButtonElement ? node : null
+        if (!button) {
+          return
+        }
+
+        button.addEventListener('click', async () => {
+          const original = button.textContent
+
+          try {
+            await navigator.clipboard.writeText(button.dataset.copyText ?? '')
+            button.textContent = 'Copied'
+            window.setTimeout(() => {
+              button.textContent = original
+            }, 1500)
+          } catch {
+            button.textContent = 'Unavailable'
+            window.setTimeout(() => {
+              button.textContent = original
+            }, 1500)
+          }
+        })
+      })
+
+      const updateScrollState = () => {
+        const ratio = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1)
+        document.documentElement.style.setProperty('--scroll-ratio', ratio.toFixed(3))
+      }
+
+      updateScrollState()
+      window.addEventListener('scroll', updateScrollState, { passive: true })
+    </script>
+  </body>
+</html>

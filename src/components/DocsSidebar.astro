@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+import { docsSections, getDocsBySection, trimCollectionSlug } from '@/lib/docs'
+
+type Props = {
+  entries: CollectionEntry<'docs'>[]
+  currentPath: string
+}
+
+const { entries, currentPath } = Astro.props as Props
+---
+
+<aside class='docs-sidebar'>
+  {docsSections.map((section) => {
+    const sectionEntries = getDocsBySection(entries, section.slug)
+
+    return (
+      <section>
+        <p class='docs-sidebar__eyebrow'>{section.title}</p>
+        <ul class='mt-3 grid gap-1'>
+          {sectionEntries.map((entry) => {
+            const href = `/docs/${entry.data.section}/${trimCollectionSlug(entry.id)}`
+
+            return (
+              <li>
+                <a href={href} class:list={{ 'docs-sidebar__link': true, 'is-active': currentPath === href }}>
+                  <span>{entry.data.title}</span>
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </section>
+    )
+  })}
+</aside>

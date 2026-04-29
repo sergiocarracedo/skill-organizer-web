@@ -1,0 +1,87 @@
+---
+import { faqItems } from '@/data/home'
+---
+
+<section class='faq-section'>
+  <div class='faq-section__intro' data-reveal>
+    <p class='faq-section__eyebrow'>FAQ</p>
+    <h2 class='faq-section__title'>The practical questions that usually come up first.</h2>
+  </div>
+
+  <div class='faq-section__items'>
+    {faqItems.map((item) => (
+      <details class='faq-item' data-reveal>
+        <summary>{item.question}</summary>
+        <p>{item.answer}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    display: flex;
+    max-width: 84rem;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 0;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .faq-section__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-section__eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.76rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(177, 225, 255, 0.72);
+  }
+
+  .faq-section__title {
+    max-width: 14ch;
+    color: white;
+    font-size: clamp(2rem, 5vw, 3.35rem);
+  }
+
+  .faq-section__items {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .faq-item {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.35rem;
+    padding: 1rem 1.1rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    color: white;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    margin-top: 0.85rem;
+    max-width: 64rem;
+    line-height: 1.82;
+    color: rgba(235, 244, 255, 0.78);
+  }
+
+  @media (min-width: 960px) {
+    .faq-section {
+      padding: 7rem 2rem 0;
+    }
+  }
+</style>

@@ -1,0 +1,7 @@
+---
+import logo from '../../../assets/logo_color2.png'
+
+const { className = '' } = Astro.props
+---
+
+<img src={logo.src} alt='Skill Organizer logo' class={`logo-mark ${className}`.trim()} loading='eager' />

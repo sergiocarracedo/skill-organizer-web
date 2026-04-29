@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+import DocsSidebar from '@/components/DocsSidebar.astro'
+import DocsToc from '@/components/DocsToc.astro'
+import SiteLayout from '@/layouts/SiteLayout.astro'
+
+type Props = {
+  title: string
+  description: string
+  entries: CollectionEntry<'docs'>[]
+  headings?: Array<{ depth: number; slug: string; text: string }>
+  currentPath: string
+  sectionLabel: string
+}
+
+const { title, description, entries, headings = [], currentPath, sectionLabel } = Astro.props as Props
+---
+
+<SiteLayout title={`${title} | Skill Organizer`} description={description} currentPath={currentPath}>
+  <section class='mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20'>
+    <div class='docs-kicker' data-reveal>
+      <p class='font-display text-xs uppercase tracking-[0.34em] text-cyan-200/72'>{sectionLabel}</p>
+      <h1 class='mt-4 max-w-4xl text-4xl text-white sm:text-5xl'>{title}</h1>
+      <p class='mt-6 max-w-2xl text-lg leading-8 text-slate-300/78'>{description}</p>
+    </div>
+
+    <div class='mt-12 grid gap-10 lg:grid-cols-[240px_minmax(0,1fr)_220px] lg:items-start'>
+      <DocsSidebar entries={entries} currentPath={currentPath} />
+      <article class='docs-prose' data-reveal>
+        <slot />
+      </article>
+      <DocsToc headings={headings} />
+    </div>
+  </section>
+</SiteLayout>

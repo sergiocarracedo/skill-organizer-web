@@ -1,0 +1,110 @@
+---
+import { featureCards } from '@/data/home'
+---
+
+<section class='features-section' id='features'>
+  <div class='features-section__intro' data-reveal>
+    <p class='features-section__eyebrow'>Main features</p>
+    <h2 class='features-section__title'>A workflow for real skill libraries, not a flat folder that grows out of control.</h2>
+    <p class='features-section__copy'>
+      Skill Organizer keeps the source tree expressive for humans and the target flat for tools, with the
+      operational commands to keep both sides healthy over time.
+    </p>
+  </div>
+
+  <div class='features-section__grid'>
+    {featureCards.map((card, index) => (
+      <article class='feature-card' data-reveal>
+        <span class='feature-card__spark' aria-hidden='true'></span>
+        <p class='features-section__index'>0{index + 1}</p>
+        <h3>{card.title}</h3>
+        <p>{card.copy}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features-section {
+    display: flex;
+    max-width: 84rem;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 0;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .features-section__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .features-section__eyebrow,
+  .features-section__index {
+    font-family: var(--font-display);
+    font-size: 0.76rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .features-section__eyebrow {
+    color: rgba(177, 225, 255, 0.72);
+  }
+
+  .features-section__index {
+    color: rgba(255, 181, 73, 0.78);
+  }
+
+  .features-section__title {
+    max-width: 16ch;
+    color: white;
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+  }
+
+  .features-section__copy {
+    max-width: 58rem;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: rgba(235, 244, 255, 0.78);
+  }
+
+  .features-section__grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .feature-card h3 {
+    max-width: 14ch;
+    color: white;
+    font-size: 1.55rem;
+  }
+
+  .feature-card p {
+    max-width: 28rem;
+    line-height: 1.82;
+  }
+
+  @media (min-width: 760px) {
+    .features-section__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 960px) {
+    .features-section {
+      padding: 7rem 2rem 0;
+    }
+
+    .features-section__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+  }
+</style>

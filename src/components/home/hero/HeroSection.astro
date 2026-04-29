@@ -1,0 +1,192 @@
+---
+import HeroWaves from '@/components/HeroWaves.astro'
+import LogoMark from '@/components/LogoMark.astro'
+import { cliVersion } from '@/data/commands'
+import { heroInstallMethods } from '@/data/home'
+
+import HeroInstallSwitcher from './HeroInstallSwitcher.astro'
+import HeroTransformPanel from './HeroTransformPanel.astro'
+---
+
+<section class='home-hero'>
+  <HeroWaves />
+
+  <div class='home-hero__inner'>
+    <div class='home-hero__intro'>
+      <div class='home-hero__badge' data-reveal>
+        <LogoMark className='h-7 w-auto' />
+        <span>Version {cliVersion}</span>
+      </div>
+
+      <p class='home-hero__eyebrow' data-reveal>Structured skills, flat targets</p>
+
+      <h1 class='home-hero__title' data-reveal>Keep your skills organized</h1>
+    </div>
+
+    <div class='home-hero__visual'>
+      <HeroTransformPanel />
+    </div>
+
+    <div class='home-hero__after'>
+      <div class='home-hero__supports' data-reveal>
+        <span>Works on macOS</span>
+        <span>Works on Linux</span>
+        <span>Claude Code, OpenCode, Codex, Cursor, and more</span>
+      </div>
+
+      <HeroInstallSwitcher methods={heroInstallMethods} />
+
+      <h2 class='home-hero__subheading' data-reveal>Expose a flat target your tools already understand.</h2>
+
+      <p class='home-hero__copy' data-reveal>
+        `skill-organizer` gives you an editable `skills-organized/` source tree and keeps the generated
+        tool-facing target synchronized through symlinks, metadata rewrites, watch mode, and the
+        background service. It is built for agentic tools that still expect a flat first-level skills folder.
+      </p>
+
+      <div class='home-hero__actions' data-reveal>
+        <a href='/docs/guides/install-and-verify'>Install guide</a>
+        <a href='/docs/reference/onboard' class='is-secondary'>Start with onboard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    max-width: 88rem;
+    margin: 0 auto;
+    padding: 5.25rem 1.5rem 4.25rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-hero__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .home-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    padding: 0.6rem 0.85rem;
+    backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .home-hero__badge span,
+  .home-hero__eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.76rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(177, 225, 255, 0.75);
+  }
+
+  .home-hero__title {
+    color: white;
+    font-size: clamp(2.7rem, 5.5vw, 5.1rem);
+    white-space: nowrap;
+  }
+
+  .home-hero__after {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    align-items: center;
+  }
+
+  .home-hero__subheading {
+    max-width: 24ch;
+    color: white;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+  }
+
+  .home-hero__copy {
+    max-width: 60rem;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: rgba(236, 244, 255, 0.78);
+    margin-top: 0.25rem;
+  }
+
+  .home-hero__supports {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .home-hero__supports span {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.88rem;
+    color: rgba(228, 241, 255, 0.82);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .home-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    justify-content: center;
+    margin-top: 0.2rem;
+  }
+
+  .home-hero__actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    border-radius: 999px;
+    padding: 0 1.25rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: rgb(4, 11, 24);
+    background: linear-gradient(120deg, rgba(38, 232, 255, 0.95), rgba(164, 95, 255, 0.88), rgba(255, 182, 73, 0.95));
+    box-shadow: 0 0 34px rgba(74, 211, 255, 0.24);
+  }
+
+  .home-hero__actions a.is-secondary {
+    color: rgba(236, 244, 255, 0.92);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: none;
+  }
+
+  .home-hero__visual {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 760px) {
+    .home-hero__title {
+      white-space: normal;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .home-hero__inner {
+      padding: 6.5rem 2rem 4.75rem;
+      gap: 2.5rem;
+    }
+  }
+</style>

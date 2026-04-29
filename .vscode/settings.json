@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "oxc.enable": true,
+  "oxc.lint.enable": true,
+  "oxc.format.enable": true,
+  "peacock.color": "#0a7f86"
+}

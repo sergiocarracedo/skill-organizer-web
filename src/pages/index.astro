@@ -1,0 +1,25 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro'
+import AdvantagesSection from '@/components/home/advantages/AdvantagesSection.astro'
+import CompatibilitySection from '@/components/home/compatibility/CompatibilitySection.astro'
+import DocsCtaSection from '@/components/home/docs-cta/DocsCtaSection.astro'
+import FaqSection from '@/components/home/faq/FaqSection.astro'
+import FeaturesSection from '@/components/home/features/FeaturesSection.astro'
+import HeroSection from '@/components/home/hero/HeroSection.astro'
+import ServiceSection from '@/components/home/service/ServiceSection.astro'
+import TerminalDemoSection from '@/components/home/terminal-demo/TerminalDemoSection.astro'
+---
+
+<SiteLayout
+  title="Skill Organizer"
+  description="A crystalline Astro landing page for the CLI that keeps nested skill source trees organized while exposing flat tool-readable targets."
+>
+  <HeroSection />
+  <TerminalDemoSection />
+  <FeaturesSection />
+  <CompatibilitySection />
+  <AdvantagesSection />
+  <ServiceSection />
+  <FaqSection />
+  <DocsCtaSection />
+</SiteLayout>
