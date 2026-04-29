@@ -1,0 +1,153 @@
+src/components/logos/Opencode.astro
+  h_a4417d1a5d273e 1-19
+src/components/CodePanel.astro
+  5a6dc4a967d6dc99 15,29-30,35-55
+src/components/home/overlap/OverlapSection.astro
+  771d01e7bf7c8473 8-11
+src/data/commands.ts
+  9e0cd2495287ff1c 1-2
+src/components/home/features/FeaturesSection.astro
+  5a6dc4a967d6dc99 17-23,87-132,163-183
+  771d01e7bf7c8473 8,10-11
+src/components/home/hero/HeroInstallSwitcher.astro
+  5a6dc4a967d6dc99 139,143,145-148,155
+src/pages/index.astro
+  5a6dc4a967d6dc99 9
+  771d01e7bf7c8473 16,22,24
+src/components/logos/Cursor.astro
+  h_a4417d1a5d273e 1-20
+src/components/logos/Codex.astro
+  h_a4417d1a5d273e 1-19
+src/components/home/advantages/AdvantagesSection.astro
+  771d01e7bf7c8473 9
+src/components/home/terminal-demo/TerminalScene.astro
+  5a6dc4a967d6dc99 2,5,8-39,42,47-68,72-81,87-273,295,302,306,310,314-317,319-325,327-328,330-363,367,370-372,374,376-380,383,387,391,395-411,414,416,418-422,424-432,434-444,447-460,464-477
+src/components/home/terminal-demo/TerminalDemoSection.astro
+  5a6dc4a967d6dc99 2,9,18
+  771d01e7bf7c8473 10,12-13
+src/lib/cli-version.ts
+  9e0cd2495287ff1c 1-6
+src/components/Footer.astro
+  771d01e7bf7c8473 1-4,16
+.github/workflows/deploy.yml
+  771d01e7bf7c8473 1-60
+src/components/logos/Copilot.astro
+  h_a4417d1a5d273e 1-20
+src/data/home.ts
+  5a6dc4a967d6dc99 2-13,22-25,34-44,46-50,52-55,57-61,63-69,71-76,78-84,86-89,126-129,132-134,140-143,146,149,151,154,156-157,159,162-163,166,168,171-175,178,181,183,185-186,188,191-193,195,198-200,207-208,210-212,217,220-224,227,230-231,233,235-236,239,241-242,244,246-247,250-253,256-257,263-264,267-270,273-274,276-277,280-283,286-287,289-290,293-294,296-297,300-301,308,311,340-341,347,350,352,355,357-358,360-361,364-366,372,375-376,378,386-387,389-390,392,395-397,399,402-404,407-408,411-412,415-416,419-420,423-425,428,446,448,453-454,467-468,474-475,481-482,488-489,491,499-502,504,507,509,511,513-514,516,521,523,525,527-528,546,574,597
+  h_a4417d1a5d273e 14-21,26-33,45,51,56,62,70,77,85,93-101,111-117,120-121,123-125,130-131,135-139,144-145,147-148,150,152-153,155,158,160-161,164-165,167,169-170,176-177,179-180,182,184,187,189-190,194,196-197,201-206,209,213-216,218-219,225-226,228-229,232,234,237-238,240,243,245,248-249,254-255,258-262,265-266,271-272,275,278-279,284-285,288,291-292,295,298-299,302-307,309-310,312-339,345-346,348-349,351,353-354,356,359,362-363,370-371,373-374,377,379-385,388,391,393-394,398,400-401,405-406,409-410,413-414,417-418,421-422,432-433,437-438,442-443,452,464,466,471,473,478,480,485,487,494,503,505-506,508,510,512,515,517-520,522,524,526,532,534,537,539,542,544,550,555,557,560,565,570,572,578-579,581-582,584,587-588,590-593
+  771d01e7bf7c8473 102-108,434,439,444,450-451,457-461,465,472,479,486,495-498,533,538,543,552,562,567,595
+src/components/logos/Apple.astro
+  h_a4417d1a5d273e 1-16
+  5a6dc4a967d6dc99 17-21
+test/docs.test.ts
+  9e0cd2495287ff1c 1-3,6,9-12,14-17
+astro.config.mjs
+  771d01e7bf7c8473 6-7
+src/components/home/hero/HeroSection.astro
+  9e0cd2495287ff1c 4
+  5a6dc4a967d6dc99 5-6,35-37,135
+  771d01e7bf7c8473 10-11,24,26,42,45-47,51-52,108,119
+src/components/logos/Pii.astro
+  h_a4417d1a5d273e 1-19
+src/components/home/compatibility/CompatibilitySection.astro
+  5a6dc4a967d6dc99 17,20,65-67,72,74-76,81,83
+  771d01e7bf7c8473 9,11-12
+src/components/home/faq/FaqSection.astro
+  771d01e7bf7c8473 8
+src/layouts/SiteLayout.astro
+  771d01e7bf7c8473 13,22
+src/components/logos/Linux.astro
+  h_a4417d1a5d273e 1-14,17,20-21
+  5a6dc4a967d6dc99 15-16,18-19,22-23
+src/pages/docs/index.astro
+  771d01e7bf7c8473 8,34
+src/components/AgentToolLogo.astro
+  5a6dc4a967d6dc99 2-18,23-24,27,30-77,79-137
+src/components/home/docs-cta/DocsCtaSection.astro
+  5a6dc4a967d6dc99 9
+  771d01e7bf7c8473 3-4,10,12-13,18
+src/components/home/hero/HeroTransformPanel.astro
+  h_a4417d1a5d273e 22-25,56-60,105,112,114,119,122,127,135,138,143,148,151,158-159,162-163,166-167,171,173,178,180,246,250,253,285,297,383,436,451-452,455,495,509,513,532,537,542
+  5a6dc4a967d6dc99 134,136
+src/components/DocsSidebar.astro
+  771d01e7bf7c8473 12,28
+  5a6dc4a967d6dc99 20,22
+src/content/docs/guides/install-and-verify.mdx
+  771d01e7bf7c8473 3,22-35
+src/components/home/service/ServiceSection.astro
+  5a6dc4a967d6dc99 94
+  771d01e7bf7c8473 9,11-12
+src/styles/global.css
+  c5d73e48f2f5c6e9 496-499,550,595,598
+  5a6dc4a967d6dc99 487-495,500-507,509,575,585,591-594,596-597,604-605
+src/components/logos/Antigravity.astro
+  h_a4417d1a5d273e 1-17
+  5a6dc4a967d6dc99 18-22
+src/components/Header.astro
+  771d01e7bf7c8473 7,12,16,21-23,36,39,42,45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "c7d71693d9332dc4f1879383a2e91b71505c7de2",
+  "prompts": {
+    "5a6dc4a967d6dc99": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_22b851239ffeY1sI0SS7rYPZoX",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 1382,
+      "total_deletions": 553,
+      "accepted_lines": 1094,
+      "overriden_lines": 196
+    },
+    "771d01e7bf7c8473": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_2259e7a55ffe899XGsuxh5BGDU",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 207,
+      "total_deletions": 115,
+      "accepted_lines": 172,
+      "overriden_lines": 0
+    },
+    "9e0cd2495287ff1c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_226370cd1ffegieb5wYEEYsILA",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 23,
+      "total_deletions": 5,
+      "accepted_lines": 21,
+      "overriden_lines": 0
+    },
+    "c5d73e48f2f5c6e9": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_226366eb9ffe9A3nOzjSxH58rd",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 7,
+      "total_deletions": 1,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_a4417d1a5d273e": {
+      "author": "Sergio Carracedo"
+    }
+  }
+}
