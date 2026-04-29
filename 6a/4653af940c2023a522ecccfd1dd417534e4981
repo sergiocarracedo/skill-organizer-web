@@ -1,0 +1,23 @@
+src/components/home/hero/HeroInstallSwitcher.astro
+  771d01e7bf7c8473 163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "6a4653af940c2023a522ecccfd1dd417534e4981",
+  "prompts": {
+    "771d01e7bf7c8473": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_2259e7a55ffe899XGsuxh5BGDU",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 13,
+      "total_deletions": 12,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    }
+  }
+}
