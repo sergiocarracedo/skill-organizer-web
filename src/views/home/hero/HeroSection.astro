@@ -1,5 +1,6 @@
 ---
 import AgentToolLogo from '@/components/AgentToolLogo.astro'
+import GitHubStarButton from '@/components/GitHubStarButton.astro'
 import LogoMark from '@/components/LogoMark.astro'
 import { heroInstallMethods, heroLogoItems } from '@/data/home'
 import { cliVersion } from '@/lib/cli-version'
@@ -63,6 +64,7 @@ import HeroTransformPanel from './HeroTransformPanel/HeroTransformPanel.astro'
         >
           Get started
         </a>
+        <GitHubStarButton />
         <a
           class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/14 bg-white/5 px-5 text-[0.95rem] text-slate-100/92 no-underline"
           href={withBase('/docs/guides/onboard-a-tool')}
