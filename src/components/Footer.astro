@@ -1,5 +1,5 @@
 ---
-const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`
+import { withBase } from '@/lib/with-base'
 ---
 
 <footer class='border-t border-white/10 bg-slate-950/80'>

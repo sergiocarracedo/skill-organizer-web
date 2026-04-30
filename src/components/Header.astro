@@ -1,10 +1,10 @@
 ---
 import LogoMark from '@/components/LogoMark.astro'
+import { withBase } from '@/lib/with-base'
 
 const { currentPath = '/' } = Astro.props
 
 const isDocs = currentPath.startsWith('/docs')
-const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`
 ---
 
 <header class='sticky top-0 z-50 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl'>

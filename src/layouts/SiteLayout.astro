@@ -9,24 +9,28 @@ type Props = {
   currentPath?: string
 }
 
-const { title, description, currentPath = Astro.url.pathname } = Astro.props as Props
+const {
+  title,
+  description,
+  currentPath = Astro.url.pathname,
+} = Astro.props as Props
 const assetBase = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}`
 ---
 
 <!doctype html>
-<html lang='en' class='scroll-smooth'>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <meta name='description' content={description} />
-    <link rel='icon' type='image/svg+xml' href={`${assetBase}favicon.svg`} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${assetBase}favicon.svg`} />
     <title>{title}</title>
   </head>
 
   <body>
-    <div class='page-noise'></div>
-    <div class='page-glow page-glow--left'></div>
-    <div class='page-glow page-glow--right'></div>
+    <div class="page-noise"></div>
+    <div class="page-glow page-glow--left"></div>
+    <div class="page-glow page-glow--right"></div>
 
     <Header currentPath={currentPath} />
     <main>
@@ -47,35 +51,19 @@ const assetBase = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}`
         { threshold: 0.14, rootMargin: '0px 0px -8% 0px' },
       )
 
-      document.querySelectorAll('[data-reveal]').forEach((node) => observer.observe(node))
-
-      document.querySelectorAll('[data-copy-text]').forEach((node) => {
-        const button = node instanceof HTMLButtonElement ? node : null
-        if (!button) {
-          return
-        }
-
-        button.addEventListener('click', async () => {
-          const original = button.textContent
-
-          try {
-            await navigator.clipboard.writeText(button.dataset.copyText ?? '')
-            button.textContent = 'Copied'
-            window.setTimeout(() => {
-              button.textContent = original
-            }, 1500)
-          } catch {
-            button.textContent = 'Unavailable'
-            window.setTimeout(() => {
-              button.textContent = original
-            }, 1500)
-          }
-        })
-      })
+      document
+        .querySelectorAll('[data-reveal]')
+        .forEach((node) => observer.observe(node))
 
       const updateScrollState = () => {
-        const ratio = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1)
-        document.documentElement.style.setProperty('--scroll-ratio', ratio.toFixed(3))
+        const ratio = Math.min(
+          window.scrollY / Math.max(window.innerHeight, 1),
+          1,
+        )
+        document.documentElement.style.setProperty(
+          '--scroll-ratio',
+          ratio.toFixed(3),
+        )
       }
 
       updateScrollState()
