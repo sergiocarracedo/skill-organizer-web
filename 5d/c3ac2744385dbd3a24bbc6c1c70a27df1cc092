@@ -1,0 +1,53 @@
+src/components/GitHubStarButton.astro
+  771d01e7bf7c8473 1-105
+src/layouts/SiteLayout.astro
+  771d01e7bf7c8473 18-22,31,33-45
+src/views/home/hero/HeroTransformPanel/HeroTransformPanel.astro
+  771d01e7bf7c8473 11-13
+  h_a4417d1a5d273e 15
+src/components/Header.astro
+  771d01e7bf7c8473 2,60-62,64
+  h_a4417d1a5d273e 12,15,17-19,21,25,31-32,35,41,44-47,53,56,63,67
+src/views/home/hero/HeroSection.astro
+  771d01e7bf7c8473 3,67
+public/og/skill-organizer-social.svg
+  771d01e7bf7c8473 1-128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "5dc3ac2744385dbd3a24bbc6c1c70a27df1cc092",
+  "prompts": {
+    "771d01e7bf7c8473": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_2259e7a55ffe899XGsuxh5BGDU",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 287,
+      "total_deletions": 4,
+      "accepted_lines": 1393,
+      "overriden_lines": 2
+    },
+    "95b74ce59e9c6a76": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_22246da1affe7VYpaSf3h1xCnt",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 0,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_a4417d1a5d273e": {
+      "author": "Sergio Carracedo"
+    }
+  }
+}
