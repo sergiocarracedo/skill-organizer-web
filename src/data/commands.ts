@@ -1,5 +1,3 @@
-import { cliVersion } from '@/lib/cli-version';
-
 export type CommandGroup = {
   slug: string;
   title: string;

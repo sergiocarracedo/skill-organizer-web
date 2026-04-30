@@ -3,9 +3,9 @@ import { getCollection } from 'astro:content'
 
 import SiteLayout from '@/layouts/SiteLayout.astro'
 import { docsSections, getDocsBySection, trimCollectionSlug } from '@/lib/docs'
+import { withBase } from '@/lib/with-base'
 
 const entries = await getCollection('docs')
-const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`
 ---
 
 <SiteLayout title='Docs | Skill Organizer' description='Guides and command reference for skill-organizer.' currentPath='/docs'>
