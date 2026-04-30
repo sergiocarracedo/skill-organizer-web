@@ -3,7 +3,7 @@ pre-commit:
     lint:
       run: pnpm oxlint .
     format:
-      run: pnpm oxfmt --check .
+      run: pnpm format:check
     type-check:
       run: pnpm astro check
     test:

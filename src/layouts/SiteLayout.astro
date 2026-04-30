@@ -55,30 +55,6 @@ const assetBase = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}`
         .querySelectorAll('[data-reveal]')
         .forEach((node) => observer.observe(node))
 
-      document.querySelectorAll('[data-copy-text]').forEach((node) => {
-        const button = node instanceof HTMLButtonElement ? node : null
-        if (!button) {
-          return
-        }
-
-        button.addEventListener('click', async () => {
-          const original = button.textContent
-
-          try {
-            await navigator.clipboard.writeText(button.dataset.copyText ?? '')
-            button.textContent = 'Copied'
-            window.setTimeout(() => {
-              button.textContent = original
-            }, 1500)
-          } catch {
-            button.textContent = 'Unavailable'
-            window.setTimeout(() => {
-              button.textContent = original
-            }, 1500)
-          }
-        })
-      })
-
       const updateScrollState = () => {
         const ratio = Math.min(
           window.scrollY / Math.max(window.innerHeight, 1),

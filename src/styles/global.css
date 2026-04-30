@@ -629,7 +629,9 @@ p {
   55% {
     transform: translateY(-1px) scale(1.012);
     filter: brightness(1.08) saturate(1.05);
-    box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.22), 0 18px 36px rgba(16, 185, 129, 0.12);
+    box-shadow:
+      0 0 0 1px rgba(52, 211, 153, 0.22),
+      0 18px 36px rgba(16, 185, 129, 0.12);
   }
 
   100% {
@@ -680,8 +682,7 @@ p {
   0%,
   100% {
     transform: translate3d(var(--hero-orbit-x, 0), var(--hero-orbit-y, 0), 0)
-      rotate(0deg)
-      scale(1);
+      rotate(0deg) scale(1);
   }
 
   25% {
@@ -690,8 +691,7 @@ p {
         calc(var(--hero-orbit-y, 0) - 8px),
         0
       )
-      rotate(calc(var(--hero-orbit-rotate, 10deg) * 0.55))
-      scale(1.08);
+      rotate(calc(var(--hero-orbit-rotate, 10deg) * 0.55)) scale(1.08);
   }
 
   50% {
@@ -700,8 +700,7 @@ p {
         calc(var(--hero-orbit-y, 0) + 12px),
         0
       )
-      rotate(var(--hero-orbit-rotate, 10deg))
-      scale(0.94);
+      rotate(var(--hero-orbit-rotate, 10deg)) scale(0.94);
   }
 
   75% {
@@ -710,8 +709,7 @@ p {
         calc(var(--hero-orbit-y, 0) + 4px),
         0
       )
-      rotate(calc(var(--hero-orbit-rotate, 10deg) * -0.5))
-      scale(1.04);
+      rotate(calc(var(--hero-orbit-rotate, 10deg) * -0.5)) scale(1.04);
   }
 }
 
