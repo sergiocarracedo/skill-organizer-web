@@ -1,0 +1,74 @@
+src/pages/docs/index.astro
+  771d01e7bf7c8473 6
+src/pages/index.astro
+  771d01e7bf7c8473 3-11
+src/components/Header.astro
+  771d01e7bf7c8473 3
+src/components/Footer.astro
+  771d01e7bf7c8473 2
+DESIGN.md
+  771d01e7bf7c8473 1-210
+src/views/home/components/terminal-demo/TerminalScene.astro
+  771d01e7bf7c8473 2-5,8-38,41-42,44-51,62-68,72-73,75-76,78,80,83-99,101,104-132,134,136,138-140,142-144,146-147,149-151,153-158,160-161,163-169,171-173,175-177,179-181,183-185,187-189,191-195,197,199-202,205,207-210,213-219,222-229,232-244,247,249-285,287
+src/components/AgentToolLogo.astro
+  771d01e7bf7c8473 32-34,39,77-86
+src/views/docs/components/DocsSidebar.astro
+  771d01e7bf7c8473 5-38
+src/components/SectionHeader.astro
+  771d01e7bf7c8473 1-39
+src/views/home/components/docs-cta/DocsCtaSection.astro
+  771d01e7bf7c8473 23
+src/views/home/components/hero/HeroInstallSwitcher.astro
+  771d01e7bf7c8473 11-13,15-19,28,32-36,41-43,48,58,72,76-77,80-85,104-106,110-112
+src/pages/docs/[section]/[slug].astro
+  771d01e7bf7c8473 5
+src/styles/global.css
+  771d01e7bf7c8473 436,444
+src/lib/with-base.ts
+  771d01e7bf7c8473 1-2
+src/views/docs/components/DocsLayout.astro
+  771d01e7bf7c8473 4-5,7-8,10-17,19-20,22-33,35-40
+src/views/home/components/terminal-demo/TerminalDemoSection.astro
+  771d01e7bf7c8473 2-4,6-7,9-33,35,37
+src/components/LogoMark.astro
+  771d01e7bf7c8473 5
+src/layouts/SiteLayout.astro
+  h_a4417d1a5d273e 15,21,23-26,31-33,85,89
+src/components/CodePanel.astro
+  771d01e7bf7c8473 11-18,21-27,35,44
+src/views/home/components/features/FeaturesSection.astro
+  771d01e7bf7c8473 2-48
+src/components/TerminalFrame.astro
+  771d01e7bf7c8473 2-12,15,23,25-26
+src/views/home/components/hero/HeroSection.astro
+  771d01e7bf7c8473 6,8,10,13,16-20,23-25,27-29,32,36-42,47-50,52-55,59-68
+src/views/docs/components/DocsToc.astro
+  771d01e7bf7c8473 14-15
+src/components/SectionShell.astro
+  771d01e7bf7c8473 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "0ef537ef56c68a761b82a5aee7c8b79dc708cfba",
+  "prompts": {
+    "771d01e7bf7c8473": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_2259e7a55ffe899XGsuxh5BGDU",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 1165,
+      "total_deletions": 1997,
+      "accepted_lines": 601,
+      "overriden_lines": 14
+    }
+  },
+  "humans": {
+    "h_a4417d1a5d273e": {
+      "author": "Sergio Carracedo"
+    }
+  }
+}
